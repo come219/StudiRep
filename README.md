@@ -1,13 +1,13 @@
 # StudiRep
 
 
-Product Owner:
+**Product Owner:**
 
 Samia
 
 
 
-Developers/Team:
+**Developers/Team:**
 
 1. Sebastian St Johnston
 
