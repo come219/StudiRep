@@ -1,6 +1,14 @@
 # StudiRep
 
 
+__About__
+
+An automatic scheduling app that looks at your timetable (calendar + work schedule), location, your food and provides you with exercises and recipes. It attempts to give the most healthy, highly recommended and best schedule based on the user’s preferences.
+
+
+
+
+
 **Product Owner:**
 
 Samia
@@ -22,4 +30,4 @@ Samia
 6. Abdullah Iqbal
 
 
-An automatic scheduling app that looks at your timetable (calendar + work schedule), location, your food and provides you with exercises and recipes. It attempts to give the most healthy, highly recommended and best schedule based on the user’s preferences.
+
