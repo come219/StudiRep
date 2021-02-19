@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         myAdapter1 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_list_item_1, foods);
         listView1.setAdapter(myAdapter1);
+        foods.add("Tomato");
 
         //add items
+        btnAdd = (Button) findViewById(R.id.button);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,16 +54,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //select item
+        listView1 = (ListView) findViewById(R.id.listView1);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                item = adapterView.getItemAtPosition(i).toString() + "has been selected.";
+                item = adapterView.getItemAtPosition(i).toString() + " has been selected.";
                 indexVal = i;
                 Toast.makeText(MainActivity.this, item, Toast.LENGTH_SHORT).show();
             }
         });
 
         //edit
+        btnEdit = (Button) findViewById(R.id.button2);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                item = adapterView.getItemAtPosition(i).toString() + "has been deleted.";
+                item = adapterView.getItemAtPosition(i).toString() + " has been deleted.";
                 Toast.makeText(MainActivity.this, item, Toast.LENGTH_SHORT).show();
 
                 foods.remove(i);
