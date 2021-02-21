@@ -24,8 +24,11 @@ public class HomePageActivity extends AppCompatActivity {
     private Button AccountButton;
     private Button HomeButton;
     private Button CalendarButton;
+    private Button FoodButton;
+
     private TextView test;
     private ImageView CalendarImage;
+
 
 
 
@@ -35,8 +38,7 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.homepage_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        AccountButton =  findViewById(R.id.bAccountButton);
-       // test = findViewById(R.id.test1234);
+
 
         CalendarImage = (ImageView) findViewById(R.id.CalendarView);
         CalendarImage.setImageResource(R.drawable.basic_calendar);
@@ -46,6 +48,8 @@ public class HomePageActivity extends AppCompatActivity {
 
 
         System.out.println("This is home page activity.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+        AccountButton =  findViewById(R.id.bAccountButton);
         AccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +69,6 @@ public class HomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //setContentView(R.layout.homepage_main);
-
                 System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
             }
 
@@ -78,9 +81,24 @@ public class HomePageActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                //setContentView(R.layout.homepage_main);
                 Intent i = new Intent(HomePageActivity.this, CalendarActivity.class);
                 HomePageActivity.this.startActivity(i);
+
+            }
+
+
+        });
+        FoodButton =  findViewById(R.id.bFood);
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+               /* Intent i = new Intent(HomePageActivity.this, FoodActivity.class);
+                FoodActivity.this.startActivity(i);
+                System.out.println("You are trying to go to the Food page############################");*/
+
+                setContentView(R.layout.activity_food);
 
             }
 

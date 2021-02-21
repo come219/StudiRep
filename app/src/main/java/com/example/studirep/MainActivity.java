@@ -21,6 +21,21 @@ import android.widget.Toast;
  *
  *     Backlog
  *
+ * 3 buttons for activity_food
+ *     Home
+ *     Hamza
+ *     Nicola
+ * Clean up code
+ *
+ *          Remove set content view
+ *
+ * Understand what DatabaseHelper does
+ *
+ * Images / front-end
+ *
+ *
+ * ----------------------------------------
+ *
  *
  * Calendar layout (remove constraint)
  *   Work on later
