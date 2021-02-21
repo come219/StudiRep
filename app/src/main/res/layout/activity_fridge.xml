@@ -4,40 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:hint="Fridge item"
+        android:gravity="center"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="QT"
+        android:gravity="center"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="@string/btnAddText"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="84dp" />
-
+        android:text="@string/btnAddText" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        tools:layout_editor_absoluteX="50dp"
-        android:text="@string/btnEditText"
-        tools:layout_editor_absoluteY="137dp" />
+        android:text="@string/btnEditText" />
 
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="400dp"
-        android:layout_height="512dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="400dp" />
+        android:layout_width="match_parent"
+        android:layout_height="450dp" />
 
 </LinearLayout>

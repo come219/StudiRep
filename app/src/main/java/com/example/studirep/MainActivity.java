@@ -19,7 +19,15 @@ import android.widget.Toast;
 
 /**
  *
- *     Backlog
+ *     =======BACKLOG=======
+ *     =====================
+ *
+ *
+ *
+ *
+ * ---------------------------------
+ *
+ * Documentation
  *
  * 3 buttons for activity_food
  *     Home
@@ -37,29 +45,31 @@ import android.widget.Toast;
  * ----------------------------------------
  *
  *
- * Calendar layout (remove constraint)
+ X Calendar layout (remove constraint)
  *   Work on later
  *
- * See date and time when inputting event
+ X See date and time when inputting event
  *
  * Ensure that all content views move between each other
+ * (Between the other group)
  *
  *  ----------------------------------------
  *
- * Fix and ensure homepage activity goes to account page activity, and vice versa
- *DONE
+ X Fix and ensure homepage activity goes to account page activity, and vice versa
+ *
  *
  * Read and write account username and password to and from file
  *
  * Home page display real calendar
  *
  * Calendar, add misc. event
+ * (add it programmatically)
  *
- * Calendar, view calendar activity
+ X Calendar, view calendar activity
  *
  * Revise and rework code (remove login and content main xml)
  *
- * Combine code with others
+ X Combine code with others
  *
  *
  *

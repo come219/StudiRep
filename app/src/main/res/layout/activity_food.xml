@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteY="244dp" />
 
     <Button
-        android:id="@+id/bRecipeeButton"
+        android:id="@+id/bRecipeButton"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
@@ -31,6 +31,26 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="331dp" />
+
+    <Button
+        android:id="@+id/bHomePageButton"
+        android:layout_width="117dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginRight="286dp"
+        android:layout_marginBottom="658dp"
+        android:text="Home"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp" />
 
 
 </RelativeLayout>

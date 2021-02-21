@@ -25,6 +25,7 @@ public class HomePageActivity extends AppCompatActivity {
     private Button HomeButton;
     private Button CalendarButton;
     private Button FoodButton;
+    private Button WorkoutButton;
 
     private TextView test;
     private ImageView CalendarImage;
@@ -44,25 +45,22 @@ public class HomePageActivity extends AppCompatActivity {
         CalendarImage.setImageResource(R.drawable.basic_calendar);
 
 
-
-
-
         System.out.println("This is home page activity.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-        AccountButton =  findViewById(R.id.bAccountButton);
+        AccountButton = findViewById(R.id.bAccountButton);
         AccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    // setContentView(R.layout.accountpage_main);
-                    System.out.println("This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                    Intent i = new Intent(HomePageActivity.this, AccountPageActivity.class);
-                    HomePageActivity.this.startActivity(i);
+                // setContentView(R.layout.accountpage_main);
+                System.out.println("This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Intent i = new Intent(HomePageActivity.this, AccountPageActivity.class);
+                HomePageActivity.this.startActivity(i);
 
-                }
+            }
 
 
         });
-        HomeButton =  findViewById(R.id.bHomePageButton);
+        HomeButton = findViewById(R.id.bHomePageButton);
         HomeButton.setOnClickListener(new View.OnClickListener() {
 
 
@@ -75,7 +73,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         });
 
-        CalendarButton =  findViewById(R.id.bCalendar);
+        CalendarButton = findViewById(R.id.bCalendar);
         CalendarButton.setOnClickListener(new View.OnClickListener() {
 
 
@@ -88,29 +86,35 @@ public class HomePageActivity extends AppCompatActivity {
 
 
         });
-        FoodButton =  findViewById(R.id.bFood);
+        FoodButton = findViewById(R.id.bFood);
         FoodButton.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-               /* Intent i = new Intent(HomePageActivity.this, FoodActivity.class);
-                FoodActivity.this.startActivity(i);
-                System.out.println("You are trying to go to the Food page############################");*/
+                Intent i = new Intent(HomePageActivity.this, FoodActivity.class);
+                HomePageActivity.this.startActivity(i);
 
-                setContentView(R.layout.activity_food);
+
+                //System.out.println("You are trying to go to the Food page############################");
+                //setContentView(R.layout.activity_food);
 
             }
+        });
+
+        WorkoutButton = findViewById(R.id.bWorkout);
+        WorkoutButton.setOnClickListener(new View.OnClickListener() {
 
 
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomePageActivity.this, WorkoutActivity.class);
+                HomePageActivity.this.startActivity(i);
+                //setContentView(R.layout.activity_workout_main);
+
+
+            }
         });
 
 
-    }
-
-
-
-
-}
-
-
+    }};
