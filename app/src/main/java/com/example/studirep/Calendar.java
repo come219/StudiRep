@@ -2,6 +2,8 @@ package com.example.studirep;
 
 import java.sql.Struct;
 
+//Class created in order to add an event to the Calendar
+
 public class Calendar {
     public Calendar() {
 

@@ -79,8 +79,9 @@ public class FoodActivity extends AppCompatActivity {
                 //Intent i = new Intent(FoodActivity.this, HomePageActivity.class);
                 //FoodActivity.this.startActivity(i);
 
-                setContentView(R.layout.homepage_main);
                 System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
+                setContentView(R.layout.homepage_main);
+
             }
 
         });

@@ -1,3 +1,9 @@
+/**
+ * CalendarActivity.java
+ * StudiRep
+ * 19024625
+ * 19129576
+ */
 package com.example.studirep;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +24,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
+/**
+ * CalendarActivity is where the user will be able to see the calendar, and add events to it.
+ */
 public class CalendarActivity extends AppCompatActivity {
+
+    //Declaring variables for calendar.
     private int year;
     private int month;
     private int day;
@@ -36,10 +48,13 @@ public class CalendarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Required android initialisation.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DropDown = (Spinner)findViewById(R.id.bEventDropDown);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(CalendarActivity.this,
@@ -51,7 +66,6 @@ public class CalendarActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-
                         break;
                     case 1:
                         break;
