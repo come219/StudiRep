@@ -49,6 +49,56 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FoodActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.StudiRep.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.FOOD" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddRecipeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.StudiRep.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.ADDRECIPE" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.StudiRep.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.DETAIL" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FridgeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.StudiRep.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.FRIDGE" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WorkoutActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.StudiRep.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.WORKOUT" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

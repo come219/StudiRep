@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText eName;
     private EditText ePassword;
     private Button eLogin;
+    private ImageView logo;
     boolean isValid = false;
 
     //String data which will be compared to user input to allow successful login to main app.
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         eName = findViewById(R.id.etUsername);
         ePassword = findViewById(R.id.etPassword);
         eLogin =  findViewById(R.id.bLogin);
+
+        //Initialising image
+        logo = (ImageView) findViewById(R.id.LogoView);
+        logo.setImageResource(R.drawable.studirep_logo);
 
         //Function to display calendar text
         thisCalendar.displayCalendarText();

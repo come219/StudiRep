@@ -6,6 +6,7 @@
  */
 package com.example.studirep;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -55,8 +56,8 @@ public class AccountPageActivity extends AppCompatActivity {
         HomePageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Switch content view to main home page
-                setContentView(R.layout.homepage_main);
+                Intent i = new Intent(AccountPageActivity.this, HomePageActivity.class);
+                AccountPageActivity.this.startActivity(i);
             }
         });
     }

@@ -27,7 +27,7 @@ public class FoodActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        /**
+       /**
          * Button to change view to see the fridge
          *
          */
@@ -36,12 +36,12 @@ public class FoodActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                /*Intent i = new Intent(FoodActivity.this, FridgeActivity.class);
-                FoodActivity.this.startActivity(i);*/
+                Intent i = new Intent(FoodActivity.this, FridgeActivity.class);
+                FoodActivity.this.startActivity(i);
 
                 System.out.println("You attempting to go to the fridge menu!!!!!!!");
 
-                setContentView(R.layout.activity_fridge);
+                //setContentView(R.layout.activity_fridge);
 
             }
 
@@ -76,11 +76,11 @@ public class FoodActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(FoodActivity.this, HomePageActivity.class);
-                //FoodActivity.this.startActivity(i);
+                Intent i = new Intent(FoodActivity.this, HomePageActivity.class);
+                FoodActivity.this.startActivity(i);
 
                 System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
-                setContentView(R.layout.homepage_main);
+                //setContentView(R.layout.homepage_main);
 
             }
 

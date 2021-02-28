@@ -126,18 +126,11 @@ public class HomePageActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(HomePageActivity.this, FoodActivity.class);
+                HomePageActivity.this.startActivity(i);
 
+                System.out.println("You are trying to go to the Food page############################");
 
-
-                //TESTING INTENT AND SETCONTENTVIEW
-
-
-
-                /*Intent i = new Intent(HomePageActivity.this, FoodActivity.class);
-                HomePageActivity.this.startActivity(i);*/
-
-                //System.out.println("You are trying to go to the Food page############################");
-                setContentView(R.layout.activity_food);
 
             }
         });
