@@ -28,6 +28,10 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
+    public MainActivity() {
+        //Initialise Calendar class
+        intialiseCalendar();
+    }
 
     //Define variables which will be used to login.
     private EditText eName;
@@ -44,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
     Calendar thisCalendar = new Calendar();
 
 
+
     /**
      * onCreate function for main.
-     *
+     *123
      * @param savedInstanceState    State which the program is currently running in.
      */
     @Override
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Function to display calendar text
         thisCalendar.displayCalendarText();
+
+
 
         /**
          *Function to compare user input with login data, and to prove authenticity.
@@ -134,6 +141,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void intialiseCalendar() {
+        Calendar calendar = new Calendar();
+    }
+
 }
 
 

@@ -12,7 +12,21 @@ package com.example.studirep;
  *     =====================
  *
  *
+ * -------------------------------
+ *  CalendarActivity function parse data to Calendar class.
  *
+ *  Fix front end images (logo)
+ *
+ *  Read and write file
+ *          Figure out operation not permitted
+ *
+ * General commenting
+ *
+ !  Finish user story
+ *
+ ! Front end
+ *
+ ! Version control
  *
  * ---------------------------------
  *
@@ -32,7 +46,7 @@ package com.example.studirep;
  * Understand what DatabaseHelper does
  *
  * Images / front-end
- * Cameron working on it.
+ X Cameron working on it.
  *
  *
  * ----------------------------------------

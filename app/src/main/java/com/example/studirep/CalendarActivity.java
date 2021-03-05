@@ -42,6 +42,7 @@ public class CalendarActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateListener;
     private Button DateButton;
     private Button TimeButton;
+    private Button SubmitButton;
 
     private Spinner DropDown;
     private static final String[] paths = {"Work", "Lectures", "Other"};
@@ -110,6 +111,17 @@ public class CalendarActivity extends AppCompatActivity {
 
         });
 
+        SubmitButton = findViewById(R.id.bSubmitButton);
+        SubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+
+                createTempEvent(String mDate, String mEvent, int mEvent_type, String mStart_time, String mEvent_duration, String mEvent_detail);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                dialog.show();
+            }
+
+
+        }
 }

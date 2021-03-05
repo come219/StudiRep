@@ -76,7 +76,7 @@
         tools:layout_editor_absoluteY="511dp" />
 
     <Button
-        android:id="@+id/bChangeWorkHours"
+        android:id="@+id/bSubmitButton"
         android:layout_width="124dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -185,12 +185,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
 
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="385dp"
         android:layout_marginLeft="385dp"
 
         android:layout_marginTop="659dp"
-        android:layout_marginEnd="26dp"
         android:text="Settings"
         tools:layout_editor_absoluteX="343dp"
         tools:layout_editor_absoluteY="673dp" />
