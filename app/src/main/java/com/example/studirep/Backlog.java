@@ -11,6 +11,12 @@ package com.example.studirep;
  *     =======BACKLOG=======
  *     =====================
  *
+ * Homepage buttons on every activity
+ *
+ *
+ *
+ *
+ *
  *
  * -------------------------------
  *  CalendarActivity function parse data to Calendar class.

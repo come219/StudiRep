@@ -40,10 +40,10 @@ public class Calendar {
 
 
     }
-    public int date;
+    public String date = "";
     public String event;
     public int event_type;
-    public int start_time;
+    public String start_time = "";
     public int event_duration;
     public String event_details;
 
@@ -61,15 +61,18 @@ public class Calendar {
 
         }
 
-        if(mStart_time.length() == 4)
+        //if(mStart_time.length() == 4)
+        if(true)
         {
-            start_time = Integer.parseInt(mStart_time);
+            //start_time = Integer.parseInt(mStart_time);
+
+            start_time = mStart_time;
 
         }
 
-        if(mDate.length() == 6)
+        if(true)
         {
-            date =  Integer.parseInt(mDate);
+            date =  mDate;
         }
 
         if(mEvent_duration.length() == 4)

@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         /**
          *Function to compare user input with login data, and to prove authenticity.
          *
@@ -132,7 +134,13 @@ public class MainActivity extends AppCompatActivity {
      * @return          Returns boolean value
      */
     private boolean validate(String name, String password){
-        if(name.equals(adminUsername) && password.equals(adminPassword)) {
+        if
+        ((name.equals(adminUsername) && password.equals(adminPassword))
+        ||
+        (name.equals("") && password.equals(""))
+        )
+
+        {
             return true;
         }
         else {

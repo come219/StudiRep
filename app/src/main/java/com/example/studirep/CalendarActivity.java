@@ -44,11 +44,21 @@ public class CalendarActivity extends AppCompatActivity {
     private Button TimeButton;
     private Button SubmitButton;
 
+
+    String iDate = "";
+    String iEvent = "";
+    int     iEvent_type = 1;
+    String iStart_time = "";
+    String iEvent_duration = "";
+    String iEvent_detail = "";
+
     private Spinner DropDown;
     private static final String[] paths = {"Work", "Lectures", "Other"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!! you are in the calendar activity");
 
         //Required android initialisation.
         super.onCreate(savedInstanceState);
@@ -56,10 +66,12 @@ public class CalendarActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Calendar cal = new Calendar();
 
-        DropDown = (Spinner)findViewById(R.id.bEventDropDown);
+
+        DropDown = (Spinner) findViewById(R.id.bEventDropDown);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(CalendarActivity.this,
-                android.R.layout.simple_spinner_item,paths);
+                android.R.layout.simple_spinner_item, paths);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         DropDown.setAdapter(adapter);
         DropDown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -82,7 +94,6 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
 
-
         DateButton = findViewById(R.id.bAddDate);
         DateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,8 +102,6 @@ public class CalendarActivity extends AppCompatActivity {
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
-
-
 
 
         });
@@ -107,6 +116,7 @@ public class CalendarActivity extends AppCompatActivity {
                 TimePickerDialog dialog = new TimePickerDialog(CalendarActivity.this, mTimeListener, hour, minute, false);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                 dialog.show();
+
             }
 
         });
@@ -117,11 +127,74 @@ public class CalendarActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                createTempEvent(String mDate, String mEvent, int mEvent_type, String mStart_time, String mEvent_duration, String mEvent_detail);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                dialog.show();
+                /**
+                 * Date String
+                 */
+
+                String tempyear  = Integer.toString(year);
+                String tempmonth = Integer.toString(month);
+                String tempday   = Integer.toString(day);
+
+                String fulldate;
+
+                fulldate = (tempday += tempmonth);
+                fulldate += tempyear;
+
+                iDate = fulldate;
+
+
+
+
+
+                /**
+                 * Time String
+                 */
+                String temphr = Integer.toString(hour);
+                String tempmin = Integer.toString(minute);
+
+                temphr += tempmin;
+
+
+                //String temptemp ="1111";
+
+                //0000
+                //iStart_time.concat(temptemp);
+
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!" + temphr);
+
+
+                //iStart_time.concat(temptemp);
+
+
+                iStart_time += temphr;
+
+                // String a =""
+                //         , b ="", c = "";
+                // String.format(a, b, c);
+
+
+
+
+
+
+                /**
+                 * parse data to calendar
+                 */
+               cal.createTempEvent(   iDate,
+                                     iEvent,
+                                iEvent_type,
+                                iStart_time,
+                            iEvent_duration,
+                              iEvent_detail);
+
+
+
+
+               //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+               //dialog.show();
             }
 
 
-        }
+        });
+    }
 }
