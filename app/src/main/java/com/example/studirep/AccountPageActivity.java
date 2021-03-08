@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -31,7 +32,7 @@ import android.widget.Toast;
 public class AccountPageActivity extends AppCompatActivity {
 
     // Private button created in order to go back to the home page activity
-    private Button HomePageButton;
+    private ImageView HomePageButton;
 
 
     /**
@@ -49,7 +50,10 @@ public class AccountPageActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Referencing xml elements
-        HomePageButton =  findViewById(R.id.bHomePageButton);
+        HomePageButton = (ImageView) findViewById(R.id.bHomePageButton);
+        HomePageButton.setImageResource(R.drawable.studirep_logo);
+
+
         System.out.println("This is account page activity.");
 
         // Following code will run if the home button is clicked

@@ -9,6 +9,7 @@
 package com.example.studirep;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -30,8 +31,8 @@ public class HomePageActivity extends AppCompatActivity {
 
     // Variables for creating buttons to switch to between views.
 
-    private Button AccountButton;
-    private Button HomeButton;
+
+
     private Button CalendarButton;
     private Button FoodButton;
     private Button WorkoutButton;
@@ -39,6 +40,8 @@ public class HomePageActivity extends AppCompatActivity {
 
     //Placeholder image to show where calendar will be on the screen.
     private ImageView CalendarImage;
+    private ImageView HomeButton;
+    private ImageView AccountButton;
 
 
     /**
@@ -59,10 +62,17 @@ public class HomePageActivity extends AppCompatActivity {
         //Referencing xml elements
         CalendarImage = (ImageView) findViewById(R.id.CalendarView);
         CalendarImage.setImageResource(R.drawable.basic_calendar);
-        AccountButton = findViewById(R.id.bAccountButton);
-        HomeButton = findViewById(R.id.bHomePageButton);
+
+        AccountButton = (ImageView) findViewById(R.id.bAccountButton);
+        AccountButton.setImageResource(R.drawable.account);
+
+        HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
+        HomeButton.setImageResource(R.drawable.studirep_logo);
+
         CalendarButton = findViewById(R.id.bCalendar);
+
         FoodButton = findViewById(R.id.bFood);
+
         WorkoutButton = findViewById(R.id.bWorkout);
 
 

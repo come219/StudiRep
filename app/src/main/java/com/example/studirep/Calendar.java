@@ -11,17 +11,22 @@ import java.io.FileWriter;
 //Class created in order to add an event to the Calendar
 
 public class Calendar {
+
+    /**
+     * Calendar Constructor
+     */
     public Calendar() {
 
 
 
-       /* try {
+        /*
+        try {
             File CalendarData = new File(Environment.getExternalStorageDirectory() + "/" + File.separator + "CalendarData.txt");
             CalendarData.createNewFile();
 
 
             if (CalendarData.exists()) {
-                System.out.println("CalendarData.txt has been created");
+                System.out.println("CalendarData.txt has been exists");
                 OutputStream fo = new FileOutputStream(CalendarData);
                 fo.write(Integer.parseInt("dsadasd"));
                 fo.close();
@@ -33,13 +38,16 @@ public class Calendar {
         } catch (IOException e) {
             System.out.println("CalendarData.txt file creation encountered an error." + e.getMessage());
             e.printStackTrace();
-        }*/
+        }
+
+         */
 
 
 
 
 
     }
+
     public String date = "";
     public String event;
     public int event_type;

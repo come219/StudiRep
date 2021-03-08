@@ -12,90 +12,108 @@
         android:layout_width="141dp"
         android:layout_height="115dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="107dp"
+        android:visibility="visible"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="225dp" />
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.StudiRep.AppBarOverlay">
-
-    </com.google.android.material.appbar.AppBarLayout>
+        tools:layout_editor_absoluteY="225dp"
+        tools:visibility="visible" />
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="650dp"
-        android:layout_marginLeft="320dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="250dp"
-        android:text="Username: " />
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="693dp"
+    android:theme="@style/Theme.StudiRep.AppBarOverlay">
 
-    <EditText
-        android:id="@+id/etUsername"
-        android:layout_width="224dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginBottom="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="350dp"
-        android:text="Password: " />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/bLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:text="Login" />
+</com.google.android.material.appbar.AppBarLayout>
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="-3dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="690dp"
+        android:layout_marginBottom="674dp"
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/Theme.StudiRep.PopupOverlay" />
+
+
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_marginTop="650dp"
+    android:layout_marginLeft="320dp"
+    app:srcCompat="@android:drawable/ic_dialog_email" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="250dp"
+    android:text="Username: " />
+
+<EditText
+    android:id="@+id/etUsername"
+    android:layout_width="224dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="100dp"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="230dp"
+    android:layout_marginBottom="20dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="350dp"
+    android:text="Password: " />
+
+<EditText
+    android:id="@+id/etPassword"
+    android:layout_width="225dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="330dp"
+    android:layout_marginBottom="10dp"
+    android:inputType="textPassword" />
+
+<Button
+    android:id="@+id/bLogin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginStart="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="400dp"
+    android:layout_marginEnd="11dp"
+    android:layout_marginRight="11dp"
+    android:text="Login"
+    tools:visibility="visible" />
+
+
+
+
+
+
 </RelativeLayout>
 

@@ -185,7 +185,8 @@ public class CalendarActivity extends AppCompatActivity {
                                 iEvent_type,
                                 iStart_time,
                             iEvent_duration,
-                              iEvent_detail);
+                              iEvent_detail
+               );
 
 
 
