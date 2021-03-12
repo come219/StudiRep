@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
     ListView listView1;
     EditText inputtext1;
     Button btnAdd, btnEdit;
