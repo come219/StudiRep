@@ -1,6 +1,6 @@
 package com.example.searching;
-
-public class Recipe {
+//all this code creates the object recipe
+ public class Recipe {
     private int id;
     private String recipeName;
     private String recipeIngredient;
