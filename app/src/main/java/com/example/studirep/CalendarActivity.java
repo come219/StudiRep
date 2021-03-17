@@ -45,6 +45,15 @@ public class CalendarActivity extends AppCompatActivity {
     private Button SubmitButton;
 
 
+    //Image views which will be used as buttons to switch between all the different activities.
+    private ImageView CalendarImage;
+    private ImageView HomeButton;
+    private ImageView AccountButton;
+    private ImageView CalendarButton;
+    private ImageView FoodButton;
+    private ImageView CommunityButton;
+    private ImageView WorkoutButton;
+
     String iDate = "";
     String iEvent = "";
     int     iEvent_type = 1;
@@ -197,5 +206,28 @@ public class CalendarActivity extends AppCompatActivity {
 
 
         });
+
+
+        CalendarImage = (ImageView) findViewById(R.id.CalendarView);
+        CalendarImage.setImageResource(R.drawable.basic_calendar);
+
+        AccountButton = (ImageView) findViewById(R.id.bAccountButton);
+        AccountButton.setImageResource(R.drawable.account);
+
+        HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
+        HomeButton.setImageResource(R.drawable.studirep_logo);
+
+        CalendarButton = (ImageView) findViewById(R.id.bCalendar);
+        CalendarButton.setImageResource(R.drawable.basic_calendar);
+
+        FoodButton = (ImageView) findViewById(R.id.bFood);
+        FoodButton.setImageResource(R.drawable.food);
+
+        WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
+        WorkoutButton.setImageResource(R.drawable.workout);
+
+        CommunityButton = (ImageView) findViewById(R.id.bCommunity);
+        CommunityButton.setImageResource(R.drawable.community);
+
     }
 }
