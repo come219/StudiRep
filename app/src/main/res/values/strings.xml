@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">searching</string>
+    <string name="to_add_document">to add document</string>
 </resources>
