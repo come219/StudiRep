@@ -33,15 +33,17 @@ public class HomePageActivity extends AppCompatActivity {
 
 
 
-    private Button CalendarButton;
-    private Button FoodButton;
-    private Button WorkoutButton;
 
 
-    //Placeholder image to show where calendar will be on the screen.
+    //Image views which will be used as buttons to switch between all the different activities.
     private ImageView CalendarImage;
     private ImageView HomeButton;
     private ImageView AccountButton;
+    private ImageView CalendarButton;
+    private ImageView FoodButton;
+    private ImageView CommunityButton;
+    private ImageView WorkoutButton;
+
 
 
     /**
@@ -69,11 +71,20 @@ public class HomePageActivity extends AppCompatActivity {
         HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
         HomeButton.setImageResource(R.drawable.studirep_logo);
 
-        CalendarButton = findViewById(R.id.bCalendar);
+        CalendarButton = (ImageView) findViewById(R.id.bCalendar);
+        CalendarButton.setImageResource(R.drawable.basic_calendar);
 
-        FoodButton = findViewById(R.id.bFood);
+        FoodButton = (ImageView) findViewById(R.id.bFood);
+        FoodButton.setImageResource(R.drawable.food);
 
-        WorkoutButton = findViewById(R.id.bWorkout);
+        WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
+        WorkoutButton.setImageResource(R.drawable.workout);
+
+        CommunityButton = (ImageView) findViewById(R.id.bCommunity);
+        CommunityButton.setImageResource(R.drawable.community);
+
+
+
 
 
         //Debug test in order to know what activity we are on.
