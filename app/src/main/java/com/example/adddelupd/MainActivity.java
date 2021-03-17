@@ -15,9 +15,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView1;
-    private EditText inputText1,inputText2;
+    private EditText inputText1;
     private Button btnAdd, btnEdit;
-
     ArrayList<String> foods = new ArrayList<String>();
     ArrayAdapter myAdapter1;
 
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView1 = (ListView) findViewById(R.id.listView1);
         btnAdd = (Button) findViewById(R.id.button);
-        btnAdd = (Button) findViewById(R.id.button2);
+        btnEdit = (Button) findViewById(R.id.button2);
         inputText1 = (EditText) findViewById(R.id.editText);
         inputText1.addTextChangedListener(inputTextWatcher);
 
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         myAdapter1 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_list_item_1, foods);
         listView1.setAdapter(myAdapter1);
-        foods.add("Tomato");
 
         //add items
         btnAdd = (Button) findViewById(R.id.button);
@@ -47,13 +45,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String stringVal = inputText1.getText().toString();
-                if (!stringVal.isEmpty()) {
-                    foods.add(stringVal);
-                    myAdapter1.notifyDataSetChanged();
-                    inputText1.setText("");
-                } else {
-                    Toast.makeText(MainActivity.this, "error", Toast.LENGTH_SHORT); //doesn't work yet
-                }
+                foods.add(stringVal);
+                myAdapter1.notifyDataSetChanged();
+                inputText1.setText("");
             }
         });
 
@@ -67,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, item, Toast.LENGTH_SHORT).show();
             }
         });
+
 
         //edit
         btnEdit = (Button) findViewById(R.id.button2);
@@ -92,18 +87,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-        private final TextWatcher inputTextWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String foodName = inputText1.getText().toString().trim();
-                btnAdd.setEnabled(!foodName.isEmpty());
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        };
-    }
+    //supposed to make the add button not available when text block is empty
+    private final TextWatcher inputTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String foodName = inputText1.getText().toString().trim();
+            btnAdd.setEnabled(!foodName.isEmpty());
+        }
+        @Override
+        public void afterTextChanged(Editable s) {
+        }
+    };
+}

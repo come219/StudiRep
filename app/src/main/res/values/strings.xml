@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">adddelupd</string>
+    <string name="app_name">Fridge List</string>
     <string name="editText">Insert Item and Quantity</string>
     <string name="btnAddText">Add</string>
     <string name="btnEditText">Edit</string>
