@@ -12,11 +12,8 @@ public class UpdateActivity extends AppCompatActivity {
     EditText recipe_name, ingredient, cooktime,method;
     Button update_button;
 
-    String id;
-    String recipeName;
-    String recipeIngredient;
+    String id,recipeName,recipeIngredient,recipeMethod;
     int cookTime;
-    String recipeMethod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +28,14 @@ public class UpdateActivity extends AppCompatActivity {
         update_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                //And only then we call this
+                DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
+                myDB.updateData(id,recipeName,recipeIngredient,cookTime,recipeMethod);
 
             }
         });
+        //First we call this
         getAndSetIntentData();
-        DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
-        myDB.updateData(id,recipeName,recipeIngredient,cookTime,recipeMethod);
     }
 
     void getAndSetIntentData(){

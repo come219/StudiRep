@@ -22,8 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_RECIPE_COOKTIME = "RECIPE_COOKTIME";
     private static final String COLUMN_ID = "ID";
 
-    public DatabaseHelper(@Nullable Context context) {
+    DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context=context;
     }
 
     @Override
@@ -76,10 +77,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_RECIPE_NAME,recipe_name);
         cv.put(COLUMN_RECIPE_INGREDIENT,recipe_ingredient);
-        cv.put(COLUMN_RECIPE_COOKTIME,cooktime);
         cv.put(COLUMN_RECIPE_METHOD,method);
+        cv.put(COLUMN_RECIPE_COOKTIME,cooktime);
 
-        long result = db.update(TABLE_NAME,cv,"_id=?",new String[]{row_id});
+
+        long result = db.update(TABLE_NAME,cv,"ID=?",new String[]{row_id});
         if(result==-1){
             Toast.makeText(context,"Failed to Update.",Toast.LENGTH_SHORT).show();
         }else{

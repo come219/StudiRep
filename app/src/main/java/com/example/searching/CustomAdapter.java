@@ -54,7 +54,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("id",String.valueOf(recipeId.get(position)));
                 intent.putExtra("recipename",String.valueOf(recipe_name.get(position)));
                 intent.putExtra("ingredient",String.valueOf(ingredient.get(position)));
-                intent.putExtra("id",String.valueOf(cooktime.get(position)));
+                intent.putExtra("cooktime",String.valueOf(cooktime.get(position)));
                 context.startActivity(intent);
 
             }
