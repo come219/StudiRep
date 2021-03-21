@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -22,7 +21,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 
 /**
@@ -211,23 +209,80 @@ public class CalendarActivity extends AppCompatActivity {
         CalendarImage = (ImageView) findViewById(R.id.CalendarView);
         CalendarImage.setImageResource(R.drawable.basic_calendar);
 
+
         AccountButton = (ImageView) findViewById(R.id.bAccountButton);
         AccountButton.setImageResource(R.drawable.account);
+
+        AccountButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to account page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                // setContentView(R.layout.accountpage_main);
+                System.out.println("This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Intent i = new Intent(CalendarActivity.this, AccountPageActivity.class);
+                CalendarActivity.this.startActivity(i);
+            }
+        });
 
         HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
         HomeButton.setImageResource(R.drawable.studirep_logo);
 
-        CalendarButton = (ImageView) findViewById(R.id.bCalendar);
-        CalendarButton.setImageResource(R.drawable.basic_calendar);
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to home page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                //setContentView(R.layout.homepage_main);
+                System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
+            }
+        });
+
+
 
         FoodButton = (ImageView) findViewById(R.id.bFood);
         FoodButton.setImageResource(R.drawable.food);
 
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to food page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, FoodActivity.class);
+                CalendarActivity.this.startActivity(i);
+
+                System.out.println("You are trying to go to the Food page############################");
+
+
+            }
+        });
+
         WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
         WorkoutButton.setImageResource(R.drawable.workout);
 
-        CommunityButton = (ImageView) findViewById(R.id.bCommunity);
-        CommunityButton.setImageResource(R.drawable.community);
+        WorkoutButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to workout page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, WorkoutActivity.class);
+                CalendarActivity.this.startActivity(i);
+                //setContentView(R.layout.activity_workout_main);
+            }
+        });
+
 
     }
 }

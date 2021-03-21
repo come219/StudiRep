@@ -1,69 +1,79 @@
 package com.example.studirep;
 
-public class Recipe {
-    private int id;
-    private String recipeName;
-    private String recipeIngredient;
-    private String recipeMethod;
-    private int recipeTime;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public Recipe(int id, String recipeName,String recipeIngredient,String recipeMethod,int recipeTime) {
-        this.id=id;
-        this.recipeName=recipeName;
-        this.recipeIngredient=recipeIngredient;
-        this.recipeMethod=recipeMethod;
-        this.recipeTime = recipeTime;
-    }
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Recipe extends AppCompatActivity {
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+
+    DatabaseHelper myDB;
+    ArrayList<String> recipeId,recipe_name,ingredient,cooktime,method;
+    CustomAdapter customAdapter;
+
+
+    //buttons and text references
 
     @Override
-    public String toString() {
-        return "Recipe{" +
-                "id=" + id +
-                ", recipeName='" + recipeName + '\'' +
-                ", recipeIngredient='" + recipeIngredient + '\'' +
-                ", recipeMethod='" + recipeMethod + '\'' +
-                ", recipeTime=" + recipeTime +
-                '}';
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        recyclerView = findViewById(R.id.recyclerView);
+        add_button = findViewById(R.id.add_button);
+        add_button.setOnClickListener((v) -> {
+            Intent intent = new Intent(Recipe.this, AddRecipeActivity.class);
+            startActivity(intent);
+        });
+
+        myDB = new DatabaseHelper(Recipe.this);
+        recipeId = new ArrayList<>();
+        recipe_name = new ArrayList<>();
+        ingredient = new ArrayList<>();
+        cooktime = new ArrayList<>();
+        method = new ArrayList<>();
+
+        storeDataInArrays();
+        customAdapter = new CustomAdapter(Recipe.this, recipeId, recipe_name, ingredient, cooktime,method);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Recipe.this));
+
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public String getRecipeName() {
-        return recipeName;
-    }
+    void storeDataInArrays(){
+        Cursor cursor=myDB.readAllData();
+        if(cursor.getCount()==0){
+            Toast.makeText(this,"No data", Toast.LENGTH_SHORT).show();
+        }else{
+            while(cursor.moveToNext()){
+                recipeId.add(cursor.getString(0));
+                recipe_name.add(cursor.getString(1));
+                ingredient.add(cursor.getString(2));
+                cooktime.add(cursor.getString(4));
+                method.add(cursor.getString(3));
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
-    }
-
-    public String getRecipeIngredient() {
-        return recipeIngredient;
-    }
-
-    public void setRecipeIngredient(String recipeIngredient) {
-        this.recipeIngredient = recipeIngredient;
-    }
-
-    public String getRecipeMethod() {
-        return recipeMethod;
-    }
-
-    public void setRecipeMethod(String recipeMethod) {
-        this.recipeMethod = recipeMethod;
-    }
-
-    public int getRecipeTime() {
-        return recipeTime;
-    }
-
-    public void setRecipeTime(int recipeTime) {
-        this.recipeTime = recipeTime;
+            }
+        }
     }
 }
-

@@ -6,24 +6,15 @@
  */
 package com.example.studirep;
 
-import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 /**
@@ -33,7 +24,11 @@ public class AccountPageActivity extends AppCompatActivity {
 
     // Private button created in order to go back to the home page activity
     private ImageView HomePageButton;
-
+    private ImageView CalendarButton;
+    private ImageView AccountButton;
+    private ImageView FoodButton;
+    private ImageView WorkoutButton;
+    private ImageView CommunityButton;
 
     /**
      * onCreate function for account page
@@ -62,6 +57,63 @@ public class AccountPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(AccountPageActivity.this, HomePageActivity.class);
                 AccountPageActivity.this.startActivity(i);
+            }
+        });
+
+        AccountButton = (ImageView) findViewById(R.id.bAccountButton);
+        AccountButton.setImageResource(R.drawable.account);
+
+        AccountButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to account page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                // setContentView(R.layout.accountpage_main);
+                System.out.println("This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Intent i = new Intent(AccountPageActivity.this, AccountPageActivity.class);
+                AccountPageActivity.this.startActivity(i);
+            }
+        });
+
+
+
+        FoodButton = (ImageView) findViewById(R.id.bFood);
+        FoodButton.setImageResource(R.drawable.food);
+
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to food page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AccountPageActivity.this, FoodActivity.class);
+                AccountPageActivity.this.startActivity(i);
+
+                System.out.println("You are trying to go to the Food page############################");
+
+
+            }
+        });
+
+        WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
+        WorkoutButton.setImageResource(R.drawable.workout);
+
+        WorkoutButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to workout page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AccountPageActivity.this, WorkoutActivity.class);
+                AccountPageActivity.this.startActivity(i);
+                //setContentView(R.layout.activity_workout_main);
             }
         });
     }

@@ -12,17 +12,10 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:hint="Fridge item"
+        android:hint="Fridge item and Quantity"
         android:gravity="center"
         android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:hint="QT"
-        android:gravity="center"
-        android:inputType="text" />
 
     <Button
         android:id="@+id/button"
@@ -39,6 +32,8 @@
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="450dp" />
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

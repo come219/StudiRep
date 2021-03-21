@@ -18,4 +18,6 @@
 
     <string name="btnFridgeButton">Go to Fridge</string>
     <string name="btnRecipeButton">Go to Recipes</string>
+
+    <string name="to_add_document">to add document</string>
 </resources>
