@@ -1,0 +1,359 @@
+Index: app/src/main/java/com/example/studirep/HomePageActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/**\r\n * HomePageActivity.java\r\n * StudiRep\r\n * 19024625\r\n * 19129576\r\n */\r\n\r\n\r\npackage com.example.studirep;\r\n\r\nimport android.content.Intent;\r\nimport android.media.Image;\r\nimport android.os.Bundle;\r\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\r\nimport com.google.android.material.snackbar.Snackbar;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport android.view.View;\r\nimport android.view.Menu;\r\nimport android.view.MenuItem;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\n/**\r\n * Landing page for the app, where you can go between all the different activities.\r\n */\r\npublic class HomePageActivity extends AppCompatActivity {\r\n\r\n    // Variables for creating buttons to switch to between views.\r\n\r\n\r\n\r\n\r\n\r\n    //Image views which will be used as buttons to switch between all the different activities.\r\n    private ImageView CalendarImage;\r\n    private ImageView HomeButton;\r\n    private ImageView AccountButton;\r\n    private ImageView CalendarButton;\r\n    private ImageView FoodButton;\r\n    private ImageView CommunityButton;\r\n    private ImageView WorkoutButton;\r\n\r\n\r\n\r\n    /**\r\n     * onCreate function for home page\r\n     *\r\n     * @param savedInstanceState    State which the program is currently running in.\r\n     */\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n\r\n        //Required android initialisation\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.homepage_main);\r\n        Toolbar toolbar = findViewById(R.id.toolbar);\r\n        setSupportActionBar(toolbar);\r\n\r\n\r\n        //Referencing xml elements\r\n        CalendarImage = (ImageView) findViewById(R.id.CalendarView);\r\n        CalendarImage.setImageResource(R.drawable.basic_calendar);\r\n\r\n        AccountButton = (ImageView) findViewById(R.id.bAccountButton);\r\n        AccountButton.setImageResource(R.drawable.account);\r\n\r\n        HomeButton = (ImageView) findViewById(R.id.bHomePageButton);\r\n        HomeButton.setImageResource(R.drawable.studirep_logo);\r\n\r\n        CalendarButton = (ImageView) findViewById(R.id.bCalendar);\r\n        CalendarButton.setImageResource(R.drawable.basic_calendar);\r\n\r\n        FoodButton = (ImageView) findViewById(R.id.bFood);\r\n        FoodButton.setImageResource(R.drawable.food);\r\n\r\n        WorkoutButton = (ImageView) findViewById(R.id.bWorkout);\r\n        WorkoutButton.setImageResource(R.drawable.workout);\r\n\r\n        CommunityButton = (ImageView) findViewById(R.id.bCommunity);\r\n        CommunityButton.setImageResource(R.drawable.community);\r\n\r\n\r\n\r\n\r\n\r\n        //Debug test in order to know what activity we are on.\r\n        System.out.println(\"This is home page activity.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\");\r\n\r\n\r\n\r\n        AccountButton.setOnClickListener(new View.OnClickListener() {\r\n\r\n            /**\r\n             * onClick function to send state to account page\r\n             * @param v View is a state\r\n             */\r\n            @Override\r\n            public void onClick(View v) {\r\n                // setContentView(R.layout.accountpage_main);\r\n                System.out.println(\"This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!\");\r\n                Intent i = new Intent(HomePageActivity.this, AccountPageActivity.class);\r\n                HomePageActivity.this.startActivity(i);\r\n            }\r\n        });\r\n\r\n\r\n\r\n        HomeButton.setOnClickListener(new View.OnClickListener() {\r\n\r\n            /**\r\n             * onClick function to send state to home page\r\n             * @param v View is a state\r\n             */\r\n            @Override\r\n            public void onClick(View v) {\r\n                //setContentView(R.layout.homepage_main);\r\n                System.out.println(\"You are going back to home page!!!!!!!!!!!!!!!\");\r\n            }\r\n        });\r\n\r\n\r\n\r\n        CalendarButton.setOnClickListener(new View.OnClickListener() {\r\n\r\n            /**\r\n             * onClick function to send state to calendar page\r\n             * @param v View is a state\r\n             */\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent i = new Intent(HomePageActivity.this, CalendarActivity.class);\r\n                HomePageActivity.this.startActivity(i);\r\n            }\r\n        });\r\n\r\n\r\n\r\n        FoodButton.setOnClickListener(new View.OnClickListener() {\r\n\r\n            /**\r\n             * onClick function to send state to food page\r\n             * @param v View is a state\r\n             */\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent i = new Intent(HomePageActivity.this, FoodActivity.class);\r\n                HomePageActivity.this.startActivity(i);\r\n\r\n                System.out.println(\"You are trying to go to the Food page############################\");\r\n\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n        WorkoutButton.setOnClickListener(new View.OnClickListener() {\r\n\r\n            /**\r\n             * onClick function to send state to workout page\r\n             * @param v View is a state\r\n             */\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent i = new Intent(HomePageActivity.this, WorkoutActivity.class);\r\n                HomePageActivity.this.startActivity(i);\r\n                //setContentView(R.layout.activity_workout_main);\r\n            }\r\n        });\r\n\r\n    }};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/studirep/HomePageActivity.java	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/java/com/example/studirep/HomePageActivity.java	(date 1615987952725)
+@@ -66,7 +66,7 @@
+         CalendarImage.setImageResource(R.drawable.basic_calendar);
+ 
+         AccountButton = (ImageView) findViewById(R.id.bAccountButton);
+-        AccountButton.setImageResource(R.drawable.account);
++        //AccountButton.setImageResource(R.drawable.account);
+ 
+         HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
+         HomeButton.setImageResource(R.drawable.studirep_logo);
+@@ -75,13 +75,13 @@
+         CalendarButton.setImageResource(R.drawable.basic_calendar);
+ 
+         FoodButton = (ImageView) findViewById(R.id.bFood);
+-        FoodButton.setImageResource(R.drawable.food);
++        //FoodButton.setImageResource(R.drawable.food);
+ 
+         WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
+-        WorkoutButton.setImageResource(R.drawable.workout);
++        //WorkoutButton.setImageResource(R.drawable.workout);
+ 
+         CommunityButton = (ImageView) findViewById(R.id.bCommunity);
+-        CommunityButton.setImageResource(R.drawable.community);
++        //CommunityButton.setImageResource(R.drawable.community);
+ 
+ 
+ 
+Index: app/src/main/java/com/example/studirep/AccountPageActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/**\r\n * AccountPageActivity.java\r\n * StudiRep\r\n * 19024625\r\n * 19129576\r\n */\r\npackage com.example.studirep;\r\n\r\nimport android.accounts.Account;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\n\r\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\r\nimport com.google.android.material.snackbar.Snackbar;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\n\r\nimport android.view.View;\r\n\r\nimport android.view.Menu;\r\nimport android.view.MenuItem;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageView;\r\nimport android.widget.Toast;\r\n\r\n\r\n/**\r\n * AccountPageActivity is the state where user can see and edit account details.\r\n */\r\npublic class AccountPageActivity extends AppCompatActivity {\r\n\r\n    // Private button created in order to go back to the home page activity\r\n    private ImageView HomePageButton;\r\n\r\n\r\n    /**\r\n     * onCreate function for account page\r\n     *\r\n     * @param savedInstanceState    State which the program is currently running in.\r\n     */\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n\r\n        //Required android initialisation\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.accountpage_main);\r\n        Toolbar toolbar = findViewById(R.id.toolbar);\r\n        setSupportActionBar(toolbar);\r\n\r\n        //Referencing xml elements\r\n        HomePageButton = (ImageView) findViewById(R.id.bHomePageButton);\r\n        HomePageButton.setImageResource(R.drawable.studirep_logo);\r\n\r\n\r\n        System.out.println(\"This is account page activity.\");\r\n\r\n        // Following code will run if the home button is clicked\r\n        HomePageButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent i = new Intent(AccountPageActivity.this, HomePageActivity.class);\r\n                AccountPageActivity.this.startActivity(i);\r\n            }\r\n        });\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/studirep/AccountPageActivity.java	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/java/com/example/studirep/AccountPageActivity.java	(date 1615990983291)
+@@ -23,6 +23,7 @@
+ import android.widget.Button;
+ import android.widget.EditText;
+ import android.widget.ImageView;
++import android.widget.TextView;
+ import android.widget.Toast;
+ 
+ 
+@@ -35,6 +36,19 @@
+     private ImageView HomePageButton;
+ 
+ 
++    private String s_inputtedName = new String();
++    private String s_dob = new String();
++    private String s_desc = new String();
++
++
++    public TextView a;
++
++
++
++
++
++
++
+     /**
+      * onCreate function for account page
+      *
+@@ -43,17 +57,41 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+ 
++
++
++
++
+         //Required android initialisation
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.accountpage_main);
+         Toolbar toolbar = findViewById(R.id.toolbar);
+         setSupportActionBar(toolbar);
+ 
++
++
++        //defaults
++        s_inputtedName = ("!!!!!!!!!!!!!!!!karen karen");
++        s_dob.equals("11/11/00");
++        s_desc.equals("live, life love") ;
++
++        a = (TextView) findViewById(R.id.AccountTextName);
++
++
++        System.out.println("!!!!!!!!!!!! hi");
++        a.setText(s_inputtedName);
++
++
++
+         //Referencing xml elements
+         HomePageButton = (ImageView) findViewById(R.id.bHomePageButton);
+         HomePageButton.setImageResource(R.drawable.studirep_logo);
+ 
+ 
++
++
++
++
++
+         System.out.println("This is account page activity.");
+ 
+         // Following code will run if the home button is clicked
+@@ -64,6 +102,13 @@
+                 AccountPageActivity.this.startActivity(i);
+             }
+         });
++
++
++
++
++
++
++
+     }
+ }
+ 
+Index: app/src/main/res/layout/accountpage_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/bAccountButton\"\r\n        android:layout_width=\"117dp\"\r\n        android:layout_height=\"40dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginEnd=\"22dp\"\r\n        android:layout_marginRight=\"22dp\"\r\n        android:text=\"Account\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"278dp\"\r\n        tools:layout_editor_absoluteY=\"16dp\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/bHomePageButton\"\r\n        android:layout_width=\"117dp\"\r\n        android:layout_height=\"40dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"6dp\"\r\n        android:layout_marginLeft=\"6dp\"\r\n        android:layout_marginTop=\"7dp\"\r\n        android:text=\"Home\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"16dp\"\r\n        tools:layout_editor_absoluteY=\"16dp\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/UpcomingText\"\r\n        android:layout_width=\"110dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginTop=\"17dp\"\r\n        android:text=\"Date 01/01/2020\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"150dp\"\r\n        tools:layout_editor_absoluteY=\"16dp\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/AccountText\"\r\n        android:layout_width=\"110dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"207dp\"\r\n        android:layout_marginLeft=\"207dp\"\r\n        android:layout_marginTop=\"130dp\"\r\n        android:text=\"Name, details,etc\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"233dp\"\r\n        tools:layout_editor_absoluteY=\"202dp\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/ProfilePhoto\"\r\n        android:layout_width=\"139dp\"\r\n        android:layout_height=\"117dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_marginTop=\"95dp\"\r\n        android:layout_marginEnd=\"217dp\"\r\n        android:layout_marginRight=\"217dp\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"82dp\"\r\n        tools:layout_editor_absoluteY=\"160dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bFood\"\r\n        android:layout_width=\"73dp\"\r\n        android:layout_height=\"42dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:layout_marginLeft=\"10dp\"\r\n        android:layout_marginBottom=\"15dp\"\r\n        android:text=\"Food\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"16dp\"\r\n        tools:layout_editor_absoluteY=\"674dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bWorkout\"\r\n        android:layout_width=\"75dp\"\r\n        android:layout_height=\"41dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginStart=\"91dp\"\r\n        android:layout_marginLeft=\"91dp\"\r\n        android:layout_marginBottom=\"15dp\"\r\n        android:text=\"Workouts\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"97dp\"\r\n        tools:layout_editor_absoluteY=\"673dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bCalendar\"\r\n        android:layout_width=\"68dp\"\r\n        android:layout_height=\"43dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginStart=\"174dp\"\r\n        android:layout_marginLeft=\"174dp\"\r\n        android:layout_marginTop=\"677dp\"\r\n        android:text=\"Calendar\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"183dp\"\r\n        tools:layout_editor_absoluteY=\"673dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bCommunity\"\r\n        android:layout_width=\"67dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"263dp\"\r\n        android:layout_marginLeft=\"263dp\"\r\n        android:layout_marginTop=\"675dp\"\r\n        android:text=\"Community\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"260dp\"\r\n        tools:layout_editor_absoluteY=\"671dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bSettings\"\r\n        android:layout_width=\"52dp\"\r\n        android:layout_height=\"41dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_marginTop=\"679dp\"\r\n        android:layout_marginEnd=\"15dp\"\r\n        android:layout_marginRight=\"15dp\"\r\n        android:text=\"Settings\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"343dp\"\r\n        tools:layout_editor_absoluteY=\"673dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bChangeDetails\"\r\n        android:layout_width=\"259dp\"\r\n        android:layout_height=\"40dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"61dp\"\r\n        android:layout_marginLeft=\"61dp\"\r\n        android:layout_marginTop=\"297dp\"\r\n        android:text=\"Change details\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"73dp\"\r\n        tools:layout_editor_absoluteY=\"329dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bCloseAccount\"\r\n        android:layout_width=\"259dp\"\r\n        android:layout_height=\"40dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginStart=\"60dp\"\r\n        android:layout_marginLeft=\"60dp\"\r\n        android:layout_marginBottom=\"251dp\"\r\n        android:text=\"Close account\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"73dp\"\r\n        tools:layout_editor_absoluteY=\"514dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/bSignOut\"\r\n        android:layout_width=\"259dp\"\r\n        android:layout_height=\"40dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginStart=\"62dp\"\r\n        android:layout_marginLeft=\"62dp\"\r\n        android:layout_marginBottom=\"194dp\"\r\n        android:text=\"Sign out\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        tools:layout_editor_absoluteX=\"73dp\"\r\n        tools:layout_editor_absoluteY=\"588dp\" />\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/accountpage_main.xml	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/res/layout/accountpage_main.xml	(date 1615990983284)
+@@ -48,7 +48,7 @@
+         tools:layout_editor_absoluteY="16dp" />
+ 
+     <TextView
+-        android:id="@+id/AccountText"
++        android:id="@+id/AccountTextName"
+         android:layout_width="110dp"
+         android:layout_height="19dp"
+         android:layout_alignParentStart="true"
+@@ -57,7 +57,38 @@
+         android:layout_marginStart="207dp"
+         android:layout_marginLeft="207dp"
+         android:layout_marginTop="130dp"
+-        android:text="Name, details,etc"
++        android:text="AAAAAA"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="233dp"
++        tools:layout_editor_absoluteY="202dp" />
++
++
++    <TextView
++        android:id="@+id/AccountTextDOB"
++        android:layout_width="110dp"
++        android:layout_height="19dp"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentLeft="true"
++        android:layout_alignParentTop="true"
++        android:layout_marginStart="208dp"
++        android:layout_marginLeft="208dp"
++        android:layout_marginTop="162dp"
++        android:text="Dob"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="233dp"
++        tools:layout_editor_absoluteY="202dp" />
++
++    <TextView
++        android:id="@+id/AccountTextDesc"
++        android:layout_width="177dp"
++        android:layout_height="76dp"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentLeft="true"
++        android:layout_alignParentTop="true"
++        android:layout_marginStart="207dp"
++        android:layout_marginLeft="207dp"
++        android:layout_marginTop="196dp"
++        android:text="desc"
+         tools:ignore="MissingConstraints"
+         tools:layout_editor_absoluteX="233dp"
+         tools:layout_editor_absoluteY="202dp" />
+Index: app/src/main/java/com/example/studirep/CalendarActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/**\r\n * CalendarActivity.java\r\n * StudiRep\r\n * 19024625\r\n * 19129576\r\n */\r\npackage com.example.studirep;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\n\r\nimport android.app.DatePickerDialog;\r\nimport android.app.Dialog;\r\nimport android.app.TimePickerDialog;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.graphics.drawable.ColorDrawable;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Button;\r\nimport android.widget.ImageView;\r\nimport android.widget.Spinner;\r\nimport android.widget.Toast;\r\n\r\n\r\n/**\r\n * CalendarActivity is where the user will be able to see the calendar, and add events to it.\r\n */\r\npublic class CalendarActivity extends AppCompatActivity {\r\n\r\n    //Declaring variables for calendar.\r\n    private int year;\r\n    private int month;\r\n    private int day;\r\n\r\n    private int hour;\r\n    private int minute;\r\n    private TimePickerDialog.OnTimeSetListener mTimeListener;\r\n\r\n    private DatePickerDialog.OnDateSetListener mDateListener;\r\n    private Button DateButton;\r\n    private Button TimeButton;\r\n    private Button SubmitButton;\r\n\r\n\r\n    //Image views which will be used as buttons to switch between all the different activities.\r\n    private ImageView CalendarImage;\r\n    private ImageView HomeButton;\r\n    private ImageView AccountButton;\r\n    private ImageView CalendarButton;\r\n    private ImageView FoodButton;\r\n    private ImageView CommunityButton;\r\n    private ImageView WorkoutButton;\r\n\r\n    String iDate = \"\";\r\n    String iEvent = \"\";\r\n    int     iEvent_type = 1;\r\n    String iStart_time = \"\";\r\n    String iEvent_duration = \"\";\r\n    String iEvent_detail = \"\";\r\n\r\n    private Spinner DropDown;\r\n    private static final String[] paths = {\"Work\", \"Lectures\", \"Other\"};\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n\r\n        System.out.println(\"!!!!!!!!!!!!!!!!!!!!!!!!!!!! you are in the calendar activity\");\r\n\r\n        //Required android initialisation.\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_calendar);\r\n        Toolbar toolbar = findViewById(R.id.toolbar);\r\n        setSupportActionBar(toolbar);\r\n\r\n        Calendar cal = new Calendar();\r\n\r\n\r\n        DropDown = (Spinner) findViewById(R.id.bEventDropDown);\r\n        ArrayAdapter<String> adapter = new ArrayAdapter<String>(CalendarActivity.this,\r\n                android.R.layout.simple_spinner_item, paths);\r\n        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n        DropDown.setAdapter(adapter);\r\n        DropDown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {\r\n            @Override\r\n            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {\r\n                switch (position) {\r\n                    case 0:\r\n                        break;\r\n                    case 1:\r\n                        break;\r\n                    case 2:\r\n                        break;\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onNothingSelected(AdapterView<?> parent) {\r\n\r\n            }\r\n        });\r\n\r\n\r\n        DateButton = findViewById(R.id.bAddDate);\r\n        DateButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                DatePickerDialog dialog = new DatePickerDialog(CalendarActivity.this, android.R.style.Theme_Holo_Dialog_MinWidth, mDateListener, year, month, day);\r\n                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));\r\n                dialog.show();\r\n            }\r\n\r\n\r\n        });\r\n\r\n\r\n        TimeButton = findViewById(R.id.bAddTime);\r\n        TimeButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                //TimePickerDialog dialog = new TimePickerDialog(CalendarActivity.this, android.R.style.Theme_Holo_Dialog_MinWidth, mTimeListener, hour, minute);\r\n\r\n                TimePickerDialog dialog = new TimePickerDialog(CalendarActivity.this, mTimeListener, hour, minute, false);\r\n                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));\r\n                dialog.show();\r\n\r\n            }\r\n\r\n        });\r\n\r\n        SubmitButton = findViewById(R.id.bSubmitButton);\r\n        SubmitButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n\r\n\r\n                /**\r\n                 * Date String\r\n                 */\r\n\r\n                String tempyear  = Integer.toString(year);\r\n                String tempmonth = Integer.toString(month);\r\n                String tempday   = Integer.toString(day);\r\n\r\n                String fulldate;\r\n\r\n                fulldate = (tempday += tempmonth);\r\n                fulldate += tempyear;\r\n\r\n                iDate = fulldate;\r\n\r\n\r\n\r\n\r\n\r\n                /**\r\n                 * Time String\r\n                 */\r\n                String temphr = Integer.toString(hour);\r\n                String tempmin = Integer.toString(minute);\r\n\r\n                temphr += tempmin;\r\n\r\n\r\n                //String temptemp =\"1111\";\r\n\r\n                //0000\r\n                //iStart_time.concat(temptemp);\r\n\r\n                System.out.println(\"!!!!!!!!!!!!!!!!!!!!!!!!!!\" + temphr);\r\n\r\n\r\n                //iStart_time.concat(temptemp);\r\n\r\n\r\n                iStart_time += temphr;\r\n\r\n                // String a =\"\"\r\n                //         , b =\"\", c = \"\";\r\n                // String.format(a, b, c);\r\n\r\n\r\n\r\n\r\n\r\n\r\n                /**\r\n                 * parse data to calendar\r\n                 */\r\n               cal.createTempEvent(   iDate,\r\n                                     iEvent,\r\n                                iEvent_type,\r\n                                iStart_time,\r\n                            iEvent_duration,\r\n                              iEvent_detail\r\n               );\r\n\r\n\r\n\r\n\r\n               //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));\r\n               //dialog.show();\r\n            }\r\n\r\n\r\n        });\r\n\r\n\r\n        CalendarImage = (ImageView) findViewById(R.id.CalendarView);\r\n        CalendarImage.setImageResource(R.drawable.basic_calendar);\r\n\r\n        AccountButton = (ImageView) findViewById(R.id.bAccountButton);\r\n        AccountButton.setImageResource(R.drawable.account);\r\n\r\n        HomeButton = (ImageView) findViewById(R.id.bHomePageButton);\r\n        HomeButton.setImageResource(R.drawable.studirep_logo);\r\n\r\n        CalendarButton = (ImageView) findViewById(R.id.bCalendar);\r\n        CalendarButton.setImageResource(R.drawable.basic_calendar);\r\n\r\n        FoodButton = (ImageView) findViewById(R.id.bFood);\r\n        FoodButton.setImageResource(R.drawable.food);\r\n\r\n        WorkoutButton = (ImageView) findViewById(R.id.bWorkout);\r\n        WorkoutButton.setImageResource(R.drawable.workout);\r\n\r\n        CommunityButton = (ImageView) findViewById(R.id.bCommunity);\r\n        CommunityButton.setImageResource(R.drawable.community);\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/studirep/CalendarActivity.java	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/java/com/example/studirep/CalendarActivity.java	(date 1615990135000)
+@@ -212,22 +212,22 @@
+         CalendarImage.setImageResource(R.drawable.basic_calendar);
+ 
+         AccountButton = (ImageView) findViewById(R.id.bAccountButton);
+-        AccountButton.setImageResource(R.drawable.account);
++        //AccountButton.setImageResource(R.drawable.account);
+ 
+         HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
+-        HomeButton.setImageResource(R.drawable.studirep_logo);
++        //HomeButton.setImageResource(R.drawable.studirep_logo);
+ 
+         CalendarButton = (ImageView) findViewById(R.id.bCalendar);
+-        CalendarButton.setImageResource(R.drawable.basic_calendar);
++        //CalendarButton.setImageResource(R.drawable.basic_calendar);
+ 
+         FoodButton = (ImageView) findViewById(R.id.bFood);
+-        FoodButton.setImageResource(R.drawable.food);
++        //FoodButton.setImageResource(R.drawable.food);
+ 
+         WorkoutButton = (ImageView) findViewById(R.id.bWorkout);
+-        WorkoutButton.setImageResource(R.drawable.workout);
++        //WorkoutButton.setImageResource(R.drawable.workout);
+ 
+         CommunityButton = (ImageView) findViewById(R.id.bCommunity);
+-        CommunityButton.setImageResource(R.drawable.community);
++        //CommunityButton.setImageResource(R.drawable.community);
+ 
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/studirep/FridgeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.studirep;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ListView;\r\nimport android.widget.Toast;\r\nimport android.text.Editable;\r\nimport android.text.TextWatcher;\r\nimport java.util.ArrayList;\r\n\r\npublic class FridgeActivity extends AppCompatActivity {\r\n    private ListView listView1;\r\n    private EditText inputText1,inputText2;\r\n    private Button btnAdd, btnEdit;\r\n\r\n    ArrayList<String> foods = new ArrayList<String>();\r\n    ArrayAdapter myAdapter1;\r\n\r\n    Integer indexVal;\r\n    String item;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fridge);\r\n\r\n        listView1 = (ListView) findViewById(R.id.listView1);\r\n        btnAdd = (Button) findViewById(R.id.button);\r\n        btnAdd = (Button) findViewById(R.id.button2);\r\n        inputText1 = (EditText) findViewById(R.id.editText);\r\n        inputText1.addTextChangedListener(inputTextWatcher);\r\n\r\n        //setup listview\r\n        myAdapter1 = new ArrayAdapter<String>(\r\n                this, android.R.layout.simple_list_item_1, foods);\r\n        listView1.setAdapter(myAdapter1);\r\n        foods.add(\"Tomato\");\r\n\r\n        //add items\r\n        btnAdd = (Button) findViewById(R.id.button);\r\n        btnAdd.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                String stringVal = inputText1.getText().toString();\r\n                if (!stringVal.isEmpty()) {\r\n                    foods.add(stringVal);\r\n                    myAdapter1.notifyDataSetChanged();\r\n                    inputText1.setText(\"\");\r\n                } else {\r\n                    Toast.makeText(FridgeActivity.this, \"error\", Toast.LENGTH_SHORT); //doesn't work yet\r\n                }\r\n            }\r\n        });\r\n\r\n        //select item\r\n        listView1 = (ListView) findViewById(R.id.listView1);\r\n        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {\r\n            @Override\r\n            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {\r\n                item = adapterView.getItemAtPosition(i).toString() + \" has been selected.\";\r\n                indexVal = i;\r\n                Toast.makeText(FridgeActivity.this, item, Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n\r\n        //edit\r\n        btnEdit = (Button) findViewById(R.id.button2);\r\n        btnEdit.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                String stringVal = inputText1.getText().toString();\r\n                foods.set(indexVal, stringVal);\r\n                myAdapter1.notifyDataSetChanged();\r\n            }\r\n        });\r\n\r\n        //delete\r\n        listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {\r\n            @Override\r\n            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {\r\n                item = adapterView.getItemAtPosition(i).toString() + \" has been deleted.\";\r\n                Toast.makeText(FridgeActivity.this, item, Toast.LENGTH_SHORT).show();\r\n\r\n                foods.remove(i);\r\n                myAdapter1.notifyDataSetChanged();\r\n                return true;\r\n            }\r\n        });\r\n    }\r\n\r\n    private final TextWatcher inputTextWatcher = new TextWatcher() {\r\n        @Override\r\n        public void beforeTextChanged(CharSequence s, int start, int count, int after) {\r\n        }\r\n        @Override\r\n        public void onTextChanged(CharSequence s, int start, int before, int count) {\r\n            String foodName = inputText1.getText().toString().trim();\r\n            btnAdd.setEnabled(!foodName.isEmpty());\r\n        }\r\n        @Override\r\n        public void afterTextChanged(Editable s) {\r\n        }\r\n    };\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/studirep/FridgeActivity.java	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/java/com/example/studirep/FridgeActivity.java	(date 1615989082396)
+@@ -1,6 +1,8 @@
+ package com.example.studirep;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
+ import android.os.Bundle;
+ import android.view.View;
+ import android.widget.AdapterView;
+@@ -18,12 +20,17 @@
+     private EditText inputText1,inputText2;
+     private Button btnAdd, btnEdit;
+ 
++    private Button HomepageButton;
++
+     ArrayList<String> foods = new ArrayList<String>();
+     ArrayAdapter myAdapter1;
+ 
+     Integer indexVal;
+     String item;
+ 
++
++
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+@@ -91,6 +98,27 @@
+                 return true;
+             }
+         });
++
++
++        /**
++         * Button to change view back to the homepage
++         *
++         */
++        HomepageButton = findViewById(R.id.bHomePageButton);
++        HomepageButton.setOnClickListener(new View.OnClickListener() {
++
++            @Override
++            public void onClick(View v) {
++                Intent i = new Intent(FridgeActivity.this, HomePageActivity.class);
++                FridgeActivity.this.startActivity(i);
++
++                System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
++                //setContentView(R.layout.homepage_main);
++
++            }
++
++        });
++
+     }
+ 
+     private final TextWatcher inputTextWatcher = new TextWatcher() {
+@@ -106,4 +134,9 @@
+         public void afterTextChanged(Editable s) {
+         }
+     };
+-}
+\ No newline at end of file
++
++
++
++
++
++}
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n}\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.studirep\"\r\n        minSdkVersion 16\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.2.0'\r\n    implementation 'com.google.android.material:material:1.2.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'\r\n    implementation 'androidx.navigation:navigation-fragment:2.3.1'\r\n    implementation 'androidx.navigation:navigation-ui:2.3.1'\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.2'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/build.gradle	(date 1615987688420)
+@@ -31,10 +31,10 @@
+ dependencies {
+ 
+     implementation 'androidx.appcompat:appcompat:1.2.0'
+-    implementation 'com.google.android.material:material:1.2.1'
++    implementation 'com.google.android.material:material:1.3.0'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+-    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+-    implementation 'androidx.navigation:navigation-ui:2.3.1'
++    implementation 'androidx.navigation:navigation-fragment:2.3.4'
++    implementation 'androidx.navigation:navigation-ui:2.3.4'
+     testImplementation 'junit:junit:4.+'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+Index: app/src/main/res/layout/activity_fridge.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\"\r\n    android:orientation=\"vertical\">\r\n\r\n\r\n    <EditText\r\n        android:id=\"@+id/editText\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"45dp\"\r\n        android:hint=\"Fridge item\"\r\n        android:gravity=\"center\"\r\n        android:inputType=\"text\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/editText2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"45dp\"\r\n        android:hint=\"QT\"\r\n        android:gravity=\"center\"\r\n        android:inputType=\"text\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/button\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"45dp\"\r\n        android:text=\"@string/btnAddText\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/button2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"45dp\"\r\n        android:text=\"@string/btnEditText\" />\r\n\r\n    <ListView\r\n        android:id=\"@+id/listView1\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"450dp\" />\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_fridge.xml	(revision c0cb12b1dcc97710312e01113df9bbe3f0c8479c)
++++ app/src/main/res/layout/activity_fridge.xml	(date 1615989199205)
+@@ -41,4 +41,24 @@
+         android:layout_width="match_parent"
+         android:layout_height="450dp" />
+ 
++    <Button
++        android:id="@+id/bHomePageButton"
++        android:layout_width="117dp"
++        android:layout_height="40dp"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentEnd="true"
++        android:layout_alignParentRight="true"
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginStart="8dp"
++        android:layout_marginEnd="286dp"
++        android:layout_marginRight="286dp"
++        android:layout_marginBottom="658dp"
++        android:text="Home"
++        tools:ignore="MissingConstraints"
++        tools:layout_editor_absoluteX="16dp"
++        tools:layout_editor_absoluteY="16dp"
++        android:layout_alignParentLeft="true"
++        android:layout_marginLeft="8dp" />
++
+ </LinearLayout>
+\ No newline at end of file
