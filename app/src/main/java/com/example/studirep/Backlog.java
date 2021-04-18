@@ -11,28 +11,33 @@ package com.example.studirep;
  *     =======BACKLOG=======
  *     =====================
  *
- * Homepage buttons on every activity
  *
+ * Bug fixing
  *
+ * VCS
+ * 
+ * parse data (read & write to file)
  *
+ * ------------------------------------
  *
+ X Homepage buttons on every activity
  *
  *
  * -------------------------------
- *  CalendarActivity function parse data to Calendar class.
+ X  CalendarActivity function parse data to Calendar class.
  *
- *  Fix front end images (logo)
+ X  Fix front end images (logo)
  *
- *  Read and write file
+ !! Read and write file
  *          Figure out operation not permitted
  *
- * General commenting
+ X General commenting
  *
- !  Finish user story
+ X  Finish user story
  *
- ! Front end
+ ? Front end
  *
- ! Version control
+ ? Version control
  *
  * ---------------------------------
  *

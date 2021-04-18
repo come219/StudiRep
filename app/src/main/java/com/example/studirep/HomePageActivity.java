@@ -24,6 +24,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Landing page for the app, where you can go between all the different activities.
  */
@@ -37,12 +43,24 @@ public class HomePageActivity extends AppCompatActivity {
 
     //Image views which will be used as buttons to switch between all the different activities.
     private ImageView CalendarImage;
+    private TextView CalendarText;
     private ImageView HomeButton;
+    private TextView HomeText;
     private ImageView AccountButton;
+    private TextView AccountText;
     private ImageView CalendarButton;
+    private TextView CalendarButtonText;
     private ImageView FoodButton;
+    private TextView FoodText;
     private ImageView CommunityButton;
+    private TextView CommunityText;
     private ImageView WorkoutButton;
+    private TextView WorkoutText;
+    private ImageView SettingsButton;
+    private TextView SettingsText;
+
+
+    private String s_upcomingtext;
 
 
 
@@ -83,7 +101,24 @@ public class HomePageActivity extends AppCompatActivity {
         CommunityButton = (ImageView) findViewById(R.id.bCommunity);
         CommunityButton.setImageResource(R.drawable.community);
 
+        SettingsButton = (ImageView) findViewById(R.id.bSettings);
+        SettingsButton.setImageResource(R.drawable.settings);
 
+
+
+
+        s_upcomingtext = "";
+
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+        s_upcomingtext += currentDate;
+        s_upcomingtext += currentTime;
+
+        //s_upcomingtext = "aosdingqooeinrgpqer";
+
+        HomeText = (TextView) findViewById(R.id.UpcomingText);
+        HomeText.setText(s_upcomingtext);
 
 
 

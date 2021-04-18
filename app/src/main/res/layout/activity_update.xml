@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".UpdateActivity">
 
-    <!--Edit text to enter four pieces of information-->
+    <!--Edit text to enter course name-->
     <EditText
         android:id="@+id/idEdtRecipeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Name" />
+        android:hint="Recipe Name" />
 
-
+    <!--edit text to enter course duration-->
     <EditText
         android:id="@+id/idEdtRecipeIngredient"
         android:layout_width="match_parent"
@@ -23,47 +23,29 @@
         android:layout_margin="10dp"
         android:hint="Ingredient" />
 
-
+    <!--edit text to display course tracks-->
     <EditText
         android:id="@+id/idEdtCookTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Time" />
+        android:hint="CookTime" />
 
-
+    <!--edit text for course description-->
     <EditText
         android:id="@+id/idEdtMethod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:inputType="textMultiLine"
         android:hint="Method" />
 
-    <!-- add button -->
+    <!--button for updating our course-->
     <Button
-        android:id="@+id/idBtnAdd"
+        android:id="@+id/idUpdateRecipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Add"
-        android:textAllCaps="false" />
-
-    <!--new button for opening our course list activity-->
-    <Button
-        android:id="@+id/idBtnReadRecipe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="RECIPES"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/inputFood"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="FOOD"
+        android:text="Update"
         android:textAllCaps="false" />
 
 </LinearLayout>

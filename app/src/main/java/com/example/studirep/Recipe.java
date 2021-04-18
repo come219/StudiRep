@@ -1,69 +1,81 @@
 package com.example.studirep;
 
-public class Recipe {
-    private int id;
-    private String recipeName;
-    private String recipeIngredient;
-    private String recipeMethod;
-    private int recipeTime;
+import androidx.appcompat.app.AppCompatActivity;
 
-    public Recipe(int id, String recipeName,String recipeIngredient,String recipeMethod,int recipeTime) {
-        this.id=id;
-        this.recipeName=recipeName;
-        this.recipeIngredient=recipeIngredient;
-        this.recipeMethod=recipeMethod;
-        this.recipeTime = recipeTime;
-    }
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class Recipe extends AppCompatActivity {
+
+    private EditText recipeNameEdt, recipeIngredientEdt, recipeCookTimeEdt, recipeMethodEdt;
+    private Button addRecipeButton, readRecipesButton, addFood;
+    private DatabaseHelper databaseHandler;
 
     @Override
-    public String toString() {
-        return "Recipe{" +
-                "id=" + id +
-                ", recipeName='" + recipeName + '\'' +
-                ", recipeIngredient='" + recipeIngredient + '\'' +
-                ", recipeMethod='" + recipeMethod + '\'' +
-                ", recipeTime=" + recipeTime +
-                '}';
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recipe);
 
-    public int getId() {
-        return id;
-    }
+        recipeNameEdt = findViewById(R.id.idEdtRecipeName);
+        recipeIngredientEdt = findViewById(R.id.idEdtRecipeIngredient);
+        recipeCookTimeEdt = findViewById(R.id.idEdtCookTime);
+        recipeMethodEdt = findViewById(R.id.idEdtMethod);
+        addRecipeButton = findViewById(R.id.idBtnAdd);
+        readRecipesButton = findViewById(R.id.idBtnReadRecipe);
+        addFood = findViewById(R.id.inputFood);
 
-    public void setId(int id) {
-        this.id = id;
-    }
+        databaseHandler = new DatabaseHelper(Recipe.this);
 
-    public String getRecipeName() {
-        return recipeName;
-    }
+        addRecipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //getting data from edit text fields.
+                String recipeName = recipeNameEdt.getText().toString();
+                String recipeIngredient = recipeIngredientEdt.getText().toString();
+                String cookTime = recipeCookTimeEdt.getText().toString();
+                String method = recipeMethodEdt.getText().toString();
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
-    }
+                // checking if the input boxes are empty or not.
+                if (recipeName.isEmpty() && recipeIngredient.isEmpty() && cookTime.isEmpty() && method.isEmpty()) {
+                    Toast.makeText(Recipe.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-    public String getRecipeIngredient() {
-        return recipeIngredient;
-    }
+                //passing values
 
-    public void setRecipeIngredient(String recipeIngredient) {
-        this.recipeIngredient = recipeIngredient;
-    }
+                databaseHandler.addRecipe(recipeName, recipeIngredient, cookTime, method);
 
-    public String getRecipeMethod() {
-        return recipeMethod;
-    }
+                Toast.makeText(Recipe.this, "Course has been added.", Toast.LENGTH_SHORT).show();
+                recipeNameEdt.setText("");
+                recipeIngredientEdt.setText("");
+                recipeCookTimeEdt.setText("");
+                recipeMethodEdt.setText("");
+            }
+        });
 
-    public void setRecipeMethod(String recipeMethod) {
-        this.recipeMethod = recipeMethod;
-    }
+        readRecipesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Recipe.this, ViewRecipes.class);
+                startActivity(i);
+            }
+        });
 
-    public int getRecipeTime() {
-        return recipeTime;
-    }
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Recipe.this, addFoodList.class);
+                startActivity(i);
+            }
+        });
 
-    public void setRecipeTime(int recipeTime) {
-        this.recipeTime = recipeTime;
+
+
+
     }
 }
 

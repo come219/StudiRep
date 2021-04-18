@@ -7,14 +7,23 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+
+
+
+
+
+
+
 public class WorkoutActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-
+    private ImageView HomeButton;
     private ListView WorkoutList;
     private ArrayList<Workout>wodList;
     private ArrayList<String>titleList; //to hold the title
@@ -39,6 +48,50 @@ public class WorkoutActivity extends AppCompatActivity implements AdapterView.On
         WorkoutList.setAdapter((ListAdapter) adapter);
 
         WorkoutList.setOnItemClickListener(this);
+
+
+
+        //Referencing xml elements
+
+        HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
+        HomeButton.setImageResource(R.drawable.studirep_logo);
+
+
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to home page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                //setContentView(R.layout.homepage_main);
+                System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
+
+                Intent i = new Intent(WorkoutActivity.this, HomePageActivity.class);
+                WorkoutActivity.this.startActivity(i);
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     @Override

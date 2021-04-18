@@ -46,7 +46,8 @@ public class CalendarActivity extends AppCompatActivity {
 
 
     //Image views which will be used as buttons to switch between all the different activities.
-    private ImageView CalendarImage;
+
+
     private ImageView HomeButton;
     private ImageView AccountButton;
     private ImageView CalendarButton;
@@ -72,6 +73,8 @@ public class CalendarActivity extends AppCompatActivity {
         //Required android initialisation.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -208,11 +211,11 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
 
-        CalendarImage = (ImageView) findViewById(R.id.CalendarView);
-        CalendarImage.setImageResource(R.drawable.basic_calendar);
 
         AccountButton = (ImageView) findViewById(R.id.bAccountButton);
         AccountButton.setImageResource(R.drawable.account);
+
+
 
         HomeButton = (ImageView) findViewById(R.id.bHomePageButton);
         HomeButton.setImageResource(R.drawable.studirep_logo);
@@ -228,6 +231,103 @@ public class CalendarActivity extends AppCompatActivity {
 
         CommunityButton = (ImageView) findViewById(R.id.bCommunity);
         CommunityButton.setImageResource(R.drawable.community);
+
+
+
+        AccountButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to account page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                // setContentView(R.layout.accountpage_main);
+                System.out.println("This button has been clicked.!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Intent i = new Intent(CalendarActivity.this, AccountPageActivity.class);
+                CalendarActivity.this.startActivity(i);
+            }
+        });
+
+
+
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to home page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                //setContentView(R.layout.homepage_main);
+                System.out.println("You are going back to home page!!!!!!!!!!!!!!!");
+            }
+        });
+
+
+
+        CalendarButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to calendar page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, CalendarActivity.class);
+                CalendarActivity.this.startActivity(i);
+            }
+        });
+
+
+
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to food page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, FoodActivity.class);
+                CalendarActivity.this.startActivity(i);
+
+                System.out.println("You are trying to go to the Food page############################");
+
+
+            }
+        });
+
+
+
+        WorkoutButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to workout page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, WorkoutActivity.class);
+                CalendarActivity.this.startActivity(i);
+                //setContentView(R.layout.activity_workout_main);
+            }
+        });
+
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * onClick function to send state to workout page
+             * @param v View is a state
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CalendarActivity.this, HomePageActivity.class);
+                CalendarActivity.this.startActivity(i);
+                //setContentView(R.layout.activity_workout_main);
+            }
+        });
+
 
     }
 }
