@@ -1,79 +1,80 @@
 package com.example.searching;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
-    FloatingActionButton add_button;
 
-    DatabaseHelper myDB;
-    ArrayList<String> recipeId,recipe_name,ingredient,cooktime,method;
-    CustomAdapter customAdapter;
-
-
-    //buttons and text references
+    private EditText recipeNameEdt, recipeIngredientEdt, recipeCookTimeEdt, recipeMethodEdt;
+    private Button addRecipeButton, readRecipesButton, addFood;
+    private DatabaseHandler databaseHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = findViewById(R.id.recyclerView);
-        add_button = findViewById(R.id.add_button);
-        add_button.setOnClickListener((v) -> {
-            Intent intent = new Intent(MainActivity.this, AddActivity.class);
-            startActivity(intent);
+
+        recipeNameEdt = findViewById(R.id.idEdtRecipeName);
+        recipeIngredientEdt = findViewById(R.id.idEdtRecipeIngredient);
+        recipeCookTimeEdt = findViewById(R.id.idEdtCookTime);
+        recipeMethodEdt = findViewById(R.id.idEdtMethod);
+        addRecipeButton = findViewById(R.id.idBtnAdd);
+        readRecipesButton = findViewById(R.id.idBtnReadRecipe);
+        addFood = findViewById(R.id.inputFood);
+
+        databaseHandler = new DatabaseHandler(MainActivity.this);
+
+        addRecipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //getting data from edit text fields.
+                String recipeName = recipeNameEdt.getText().toString();
+                String recipeIngredient = recipeIngredientEdt.getText().toString();
+                String cookTime = recipeCookTimeEdt.getText().toString();
+                String method = recipeMethodEdt.getText().toString();
+
+                // checking if the input boxes are empty or not.
+                if (recipeName.isEmpty() && recipeIngredient.isEmpty() && cookTime.isEmpty() && method.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //passing values
+
+                databaseHandler.addRecipe(recipeName, recipeIngredient, cookTime, method);
+
+                Toast.makeText(MainActivity.this, "Course has been added.", Toast.LENGTH_SHORT).show();
+                recipeNameEdt.setText("");
+                recipeIngredientEdt.setText("");
+                recipeCookTimeEdt.setText("");
+                recipeMethodEdt.setText("");
+            }
         });
 
-        myDB = new DatabaseHelper(MainActivity.this);
-        recipeId = new ArrayList<>();
-        recipe_name = new ArrayList<>();
-        ingredient = new ArrayList<>();
-        cooktime = new ArrayList<>();
-        method = new ArrayList<>();
-
-        storeDataInArrays();
-        customAdapter = new CustomAdapter(MainActivity.this, recipeId, recipe_name, ingredient, cooktime,method);
-        recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-
-    }
-
-
-
-    void storeDataInArrays(){
-        Cursor cursor=myDB.readAllData();
-        if(cursor.getCount()==0){
-            Toast.makeText(this,"No data", Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
-                recipeId.add(cursor.getString(0));
-                recipe_name.add(cursor.getString(1));
-                ingredient.add(cursor.getString(2));
-                cooktime.add(cursor.getString(4));
-                method.add(cursor.getString(3));
-
+        readRecipesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ViewRecipes.class);
+                startActivity(i);
             }
-        }
+        });
+
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, addFoodList.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
     }
 }

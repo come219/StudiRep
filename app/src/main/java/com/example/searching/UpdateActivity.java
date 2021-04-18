@@ -2,6 +2,7 @@ package com.example.searching;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,51 +10,46 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
-    EditText recipe_name, ingredient, cooktime,method;
-    Button update_button;
 
-    String id,recipeName,recipeIngredient,recipeMethod;
-    int cookTime;
+    private EditText recipeNameEdt, recipeIngredientEdt, recipeCookTimeEdt, recipeMethodEdt;
+    private Button updateButton;
+    private com.example.searching.DatabaseHandler databaseHandler;
+    String recipeName, recipeIngredient, cookTime, method;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        recipe_name=findViewById(R.id.recipe_name2);
-        ingredient=findViewById(R.id.ingredient2);
-        cooktime=findViewById(R.id.cooktime2);
-        method=findViewById(R.id.method2);
-        update_button=findViewById(R.id.update_button);
-        update_button.setOnClickListener(new View.OnClickListener(){
+        recipeNameEdt = findViewById(R.id.idEdtRecipeName);
+        recipeIngredientEdt = findViewById(R.id.idEdtRecipeIngredient);
+        recipeCookTimeEdt = findViewById(R.id.idEdtCookTime);
+        recipeMethodEdt = findViewById(R.id.idEdtMethod);
+        updateButton = findViewById(R.id.idUpdateRecipe);
+
+
+        databaseHandler = new com.example.searching.DatabaseHandler(UpdateActivity.this);
+
+        recipeName = getIntent().getStringExtra("name");
+        recipeIngredient = getIntent().getStringExtra("ingredient");
+        cookTime = getIntent().getStringExtra("cookTime");
+        method = getIntent().getStringExtra("method");
+
+        recipeNameEdt.setText(recipeName);
+        recipeIngredientEdt.setText(recipeIngredient);
+        recipeCookTimeEdt.setText(cookTime);
+        recipeMethodEdt.setText(method);
+
+
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //And only then we call this
-                DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
-                myDB.updateData(id,recipeName,recipeIngredient,cookTime,recipeMethod);
-
+                //databaseHandler.updateRecipe(recipeName, recipeNameEdt.getText().toString(), recipeIngredientEdt.getText().toString(), recipeCookTimeEdt.getText().toString(), recipeMethodEdt.getText().toString());
+                databaseHandler.updateRecipe(recipeName, recipeNameEdt.getText().toString(), recipeIngredientEdt.getText().toString(), recipeCookTimeEdt.getText().toString(), recipeMethodEdt.getText().toString());
+                Toast.makeText(UpdateActivity.this, "Recipe Updated..", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(UpdateActivity.this, com.example.searching.MainActivity.class);
+                startActivity(i);
             }
         });
-        //First we call this
-        getAndSetIntentData();
-    }
-
-    void getAndSetIntentData(){
-        if(getIntent().hasExtra("id")&&getIntent().hasExtra("recipeName")&&getIntent().hasExtra("recipeIngredient")&&getIntent().hasExtra("cookTime")&&getIntent().hasExtra("recipeMethod")) {
-            //Getting Data from Intent
-            id = getIntent().getStringExtra("id");
-            recipeName = getIntent().getStringExtra("recipeName");
-            recipeIngredient = getIntent().getStringExtra("recipeIngredient");
-            cookTime = Integer.parseInt(getIntent().getStringExtra("cookTime"));
-            recipeMethod = getIntent().getStringExtra("recipeMethod");
-
-            //Setting Intent Data
-            recipe_name.setText(recipeName);
-            ingredient.setText(recipeIngredient);
-            cooktime.setText(cookTime);
-            method.setText(recipeMethod);
-        }else{
-            Toast.makeText(this,"No data.",Toast.LENGTH_SHORT).show();
-        }
     }
 }
