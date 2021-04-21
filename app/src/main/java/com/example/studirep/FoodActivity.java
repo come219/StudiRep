@@ -90,12 +90,11 @@ public class FoodActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(FoodActivity.this, AddRecipeActivity.class);
-                //FoodActivity.this.startActivity(i);
+                Intent i = new Intent(FoodActivity.this, Recipe.class);
+                FoodActivity.this.startActivity(i);
 
                 System.out.println("You attempting to go to the recipe menu!!!!!!!");
 
-                setContentView(R.layout.activity_recipe);
             }
 
         });

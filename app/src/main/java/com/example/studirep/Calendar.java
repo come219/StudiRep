@@ -19,16 +19,21 @@ public class Calendar {
 
 
 
-        /*
+
+    }
+
+
+    public void writefile()
+    {
         try {
-            File CalendarData = new File(Environment.getExternalStorageDirectory() + "/" + File.separator + "CalendarData.txt");
+            File CalendarData = new File(Environment.getExternalStorageDirectory() + "  /" + File.separator + "calendardata.txt");
             CalendarData.createNewFile();
 
 
             if (CalendarData.exists()) {
                 System.out.println("CalendarData.txt has been exists");
                 OutputStream fo = new FileOutputStream(CalendarData);
-                fo.write(Integer.parseInt("dsadasd"));
+                fo.write(Integer.parseInt(fullstring));
                 fo.close();
 
 
@@ -36,15 +41,9 @@ public class Calendar {
                 System.out.println("File already exists");
             }
         } catch (IOException e) {
-            System.out.println("CalendarData.txt file creation encountered an error." + e.getMessage());
+            System.out.println("CalendarData.txt file creation encountered an error. " + e.getMessage());
             e.printStackTrace();
         }
-
-         */
-
-
-
-
 
     }
 
@@ -54,6 +53,8 @@ public class Calendar {
     public String start_time = "";
     public int event_duration;
     public String event_details;
+
+    public String fullstring;
 
     public static void displayCalendarText() {
         System.out.println("Calendar class.");
@@ -97,10 +98,12 @@ public class Calendar {
         }
 
 
+        fullstring = (date + "," + event_type +  "," + start_time + "," + event_duration + "," + event_details);
+
 
         System.out.println("date(ddmmyy),eventtype,time(xx:xx),duration(xx:xx)");
 
-        System.out.println(date + "," + event_type +  "," + start_time + "," + event_duration + "," + event_details);
+        //System.out.println(date + "," + event_type +  "," + start_time + "," + event_duration + "," + event_details);
 
 
     }

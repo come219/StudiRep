@@ -61,7 +61,9 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Recipe.this, ViewRecipes.class);
-                startActivity(i);
+                //startActivity(i);
+                Recipe.this.startActivity(i);
+                System.out.println("Going to Recipes!!!");
             }
         });
 
@@ -69,7 +71,9 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Recipe.this, addFoodList.class);
-                startActivity(i);
+                //startActivity(i);
+                Recipe.this.startActivity(i);
+                System.out.println("Going to Food!!!");
             }
         });
 

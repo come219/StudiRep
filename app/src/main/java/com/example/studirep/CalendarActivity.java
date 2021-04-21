@@ -191,6 +191,7 @@ public class CalendarActivity extends AppCompatActivity {
 
                 /**
                  * parse data to calendar
+                 * //creates a string as a result (fullstring)
                  */
                cal.createTempEvent(   iDate,
                                      iEvent,
@@ -199,6 +200,10 @@ public class CalendarActivity extends AppCompatActivity {
                             iEvent_duration,
                               iEvent_detail
                );
+
+
+                //does something with the string
+               cal.writefile();
 
 
 
